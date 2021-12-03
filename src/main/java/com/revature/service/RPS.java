@@ -2,7 +2,7 @@ package com.revature.service;
 
 public class RPS {
     public String playerVsPlayer(int player1, int player2) {
-        // rock - 1, paper - 2, scissors 3
+        // rock - 1, paper - 2, scissors - 3
 
         String results = null;
 
