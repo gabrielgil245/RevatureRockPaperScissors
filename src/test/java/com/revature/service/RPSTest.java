@@ -12,11 +12,50 @@ public class RPSTest extends TestCase {
         rps = new RPS();
     }
 
-    public void testPlayerVsPlayer() {
+    public void testPlayerVsPlayerWhenPlayerOneWins() {
         // Assign
-        String player1 = "rock";
-        String player2 = "scissors";
+        int player1 = 3;
+        int player2 = 2;
         String expectedResult = "Player 1 wins!";
+
+        // Act
+        String actualResult = rps.playerVsPlayer(player1, player2);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    public void testPlayerVsPlayerWhenPlayerTwoWins() {
+        // Assign
+        int player1 = 1;
+        int player2 = 2;
+        String expectedResult = "Player 2 wins!";
+
+        // Act
+        String actualResult = rps.playerVsPlayer(player1, player2);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    public void testPlayerVsPlayerWhenPlayersAreTied() {
+        // Assign
+        int player1 = 2;
+        int player2 = 2;
+        String expectedResult = "Tie!";
+
+        // Act
+        String actualResult = rps.playerVsPlayer(player1, player2);
+
+        // Assert
+        assertEquals(expectedResult, actualResult);
+    }
+
+    public void testPlayerVsPlayerWhenPlayersInputSomethingElse() {
+        // Assign
+        int player1 = 5;
+        int player2 = 0;
+        String expectedResult = "Invalid input(s). Please try again.";
 
         // Act
         String actualResult = rps.playerVsPlayer(player1, player2);
